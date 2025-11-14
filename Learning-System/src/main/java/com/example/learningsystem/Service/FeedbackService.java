@@ -45,15 +45,13 @@ public class FeedbackService {
 
 
 
-    public ArrayList<Feedback> getById(String id) {
-        ArrayList<Feedback> couresID = new ArrayList<>();
+    public Feedback getById(String id) {
         for (Feedback f : feedbacks) {
             if (f.getId().equals(id)) {
-
-                couresID.add(f);
+                return f;
             }
         }
-        return couresID;
+        return null;
     }
 
 

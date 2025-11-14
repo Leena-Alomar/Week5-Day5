@@ -68,8 +68,8 @@ public class FeedbackController {
     @GetMapping("/get/course/{id}")
     public ResponseEntity<?> getByCourse(@PathVariable String id) {
 
-        if (! feedbackService.getByCourseId(id).isEmpty()){
-            return ResponseEntity.status(200).body(feedbackService.getByCourseId(id));
+        if ( feedbackService.getById(id)!=null){
+            return ResponseEntity.status(200).body(feedbackService.getById(id));
         }
         return ResponseEntity.status(400).body(new ApiResponse("The Feedback IS Not Found"));
     }
